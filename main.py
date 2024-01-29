@@ -1,5 +1,5 @@
 # Dev_@ladinh production
-# a sign-up program
+# sign-up and login program entailing the user to enter his/her name and then logiin's in
 
 print("\n>>>WELCOME TO THE ADVENTURES GAME<<<")
 my_size = 2
@@ -9,7 +9,6 @@ number_list = ["1","2","3","4","5"]
 def validate_name(name):
     forbidden_names = ["kevo", "brayo", "franko", 
                    "bravo", "stivo", "shee"]
-
     return name not in forbidden_names
 
 def validate_number(number):
@@ -32,7 +31,6 @@ def get_user_input(prompt, validation_function=None,
         if not user_input:
             print("ERROR!! Please enter a valid response.")
             continue
-        
         if validation_function and not validation_function(user_input):
             print(error_message)
             continue
@@ -63,7 +61,6 @@ def game_logic(identity):
                            error_message="ERROR!! Please enter a valid number")    
     if number_guess in number_list:
         print("All is cool")   
-        #run_again(identity)
         
 sign_up()
 
