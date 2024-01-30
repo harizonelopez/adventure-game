@@ -1,7 +1,7 @@
 # Dev_@ladinh production
-# sign-up and login program entailing the user to enter his/her name and then logiin's in
+# sign-up and login program entailing the user to enter his/her name and then log's in to the adventure game
 
-print("\n>>>WELCOME TO THE ADVENTURES GAME<<<")
+print("\n>>>WELCOME TO THE ADVENTURE GAME<<<")
 my_size = 2
 my_list = []
 number_list = ["1","2","3","4","5"]
@@ -60,7 +60,7 @@ def game_logic(identity):
                            validation_function=validate_number,
                            error_message="ERROR!! Please enter a valid number")    
     if number_guess in number_list:
-        print("All is cool")   
+        print("All is cool pall")   
         
 sign_up()
 
