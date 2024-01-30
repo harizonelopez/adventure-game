@@ -5,7 +5,6 @@ import time
 
 my_size = 2
 my_list = []
-score = 0
 
 def validate_word(word):
     return word.isalpha() and len(word) >= 1
@@ -144,7 +143,7 @@ def treasure_room():
     time.sleep(1)
     print(" >>>Hurray!! You are rewarded handsomely with untold riches.")
     time.sleep(1)
-    print(" >>>Congrats, You have successfully completed the adventure game!\n")
+    print(" >>>Congrats, You have successfully completed the adventure game having completed all the levels.!\n")
     
 def main():
     signUp()
