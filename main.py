@@ -46,9 +46,9 @@ def introduction():
     time.sleep(1)
     print(" >>You find yourself in a mysterious land.")
     time.sleep(1)
-    print(" >>Your goal is to navigate through challenges and reach the treasure kept at a specific place.")
+    print(" >>Your goal is to navigate through challenges and reach the treasure hidden.")
     time.sleep(1)
-    print(" >>Let the adventure begin!")
+    print(" >>May your decisions be wise and your journey adventures!\n")
     
 def signUp():
     print("\n***ADVENTURE GAME***\nWelcome to the adventure game, you need to sign-up & login to play the game\nEnjoy pall")
@@ -99,7 +99,7 @@ def dark_forest():
         print(" >>>You encounter a friendly elf who guides you through the forest..\n >>>Proceed to level two")
         return True
     else:
-        print(" >>>You stumble upon a group of goblins. They chase you away.\n")
+        print(" >>>You stumble upon a group of goblins. They chase you away. Game over\n")
         return False
     
 def raging_river():
@@ -117,7 +117,7 @@ def raging_river():
         print("You successfully navigate the river with the boat.\n >>>Proceed to level 3")
         return True
     else:
-        print("The bridge collapses under your weight.You drawn and asks for help.")
+        print("The bridge collapses under your weight.You drawn and asks for help. Game over")
         return False
     
 def steep_mountain():
@@ -143,7 +143,7 @@ def treasure_room():
     time.sleep(1)
     print(" >>>Hurray!! You are rewarded handsomely with untold riches.")
     time.sleep(1)
-    print(" >>>Congrats, You have successfully completed the adventure game having completed all the levels.!\n")
+    print(" >>>Congrats, You have successfully completed the adventure game!\n")
     
 def main():
     signUp()
