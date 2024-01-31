@@ -30,7 +30,7 @@ def run_again():
         quit()
     
 def get_user_input(prompt, validation_function=None, 
-                   error_message="ERROR!! The name is forbidden as an input. Try again."):
+                   error_message="ERROR!! The name is forbidden as an input, Try again."):
     while True:
         user_input = input(prompt).strip().lower()
         if not user_input:
@@ -56,15 +56,15 @@ def register():
     for i in range(my_size):
         user_name = get_user_input("Enter your name\n:-> ",
                                 validation_function=validate_name,
-                                error_message="ERROR!! The name is forbidden as an input. Try again.")
+                                error_message="ERROR!! The name is forbidden as an input, Try again.")
         my_list.append(user_name)
     
     player_name = None    
-    print("\n**Log In**")
+    print("\n**Log In**\n--Log in now--")
     while player_name not in my_list:
         player_name = get_user_input("Enter your user name\n:-> ",
                                    validation_function=validate_word,
-                                   error_message="ERRROR!! Strange input detected. Try again.")
+                                   error_message="ERRROR!! Strange input detected, Try again.")
         
         if player_name in my_list:
             print(f"\nHey {player_name}, you have succesfully logged in to the adventure game.")
