@@ -46,32 +46,32 @@ def introduction():
     time.sleep(1)
     print(" >>You find yourself in a mysterious land.")
     time.sleep(1)
-    print(" >>Your goal is to navigate through challenges and reach the treasure hidden.")
+    print(" >>Your goal is to navigate through the challenges and reach the treasure hidden.")
     time.sleep(1)
-    print(" >>May your decisions be wise and your journey adventures!\n")
+    print(" >>May your decisions be wise and so your journey adventures!\n")
     
-def signUp():
+def register():
     print("\n***ADVENTURE GAME***\nWelcome to the adventure game, you need to sign-up & login to play the game\nEnjoy pall")
     print("\n**Sign Up**")
     for i in range(my_size):
-        name = get_user_input("Enter your name\n:-> ",
+        user_name = get_user_input("Enter your name\n:-> ",
                                 validation_function=validate_name,
                                 error_message="ERROR!! The name is forbidden as an input. Try again.")
-        my_list.append(name)
+        my_list.append(user_name)
     
-    user_name = None    
+    player_name = None    
     print("\n**Log In**")
-    while user_name not in my_list:
-        user_name = get_user_input("Enter your user name\n:-> ",
+    while player_name not in my_list:
+        player_name = get_user_input("Enter your user name\n:-> ",
                                    validation_function=validate_word,
                                    error_message="ERRROR!! Strange input detected. Try again.")
         
-        if user_name in my_list:
-            print(f"\nHey {user_name}, you have succesfully logged in to the adventure game.")
+        if player_name in my_list:
+            print(f"\nHey {player_name}, you have succesfully logged in to the adventure game.")
             introduction()
             
         else:
-            print("ERROR!! Incorrect username entered? Try again.")
+            print("ERROR!! Incorrect username entered, Try again.")
         
 def choose_path():
     print("\n**PATH SELECTION**\nChoose your path:")
@@ -118,7 +118,7 @@ def raging_river():
                                   error_message="ERROR!! Invallid input detected. Try again.").lower()
 
     if river_choice == "boat":
-        print(" >>>You successfully navigate the river with the boat to the other side.\n >>>Proceed to level 3")
+        print(" >>>You successfully navigate the river with the boat to the other side.\n >>>Proceed to level three")
         return True
     else:
         print(" >>>The bridge collapses under your weight.You drawn and asks for help. Game over")
@@ -136,7 +136,7 @@ def steep_mountain():
                                      error_message="ERROR!! Invallid input detected, Try again.").lower()
 
     if mountain_choice == "ledge":
-        print(" >>>You navigate the narrow ledge and reach the summit.\n >>>Proceed to level 4")
+        print(" >>>You navigate the narrow ledge and reach the summit.\n >>>Proceed to level four")
         return True
     else:
         print(" >>>The cave is home to a sleeping dragon. You quietly and stealthily retreat back.")
@@ -154,7 +154,7 @@ def rugged_road():
                                  error_message="ERROR!! Invallid input detected. Try again.").lower()
     
     if road_choice == "stop":
-        print(" >>>You decline crossing the road and a stranger/'help' appears.\n >>>Proceed to level 5")
+        print(" >>>You decline crossing the road and a stranger/'help' appears.\n >>>Proceed to level five")
         return True
     else:
         print(" >>>You try to cross the road and suddenly you got stuck in mud and tanker appears to be coming from the other end, guess what next..")
@@ -171,7 +171,7 @@ def help_starnger():
                                  validation_function=lambda x: x in ["yes", "no"],
                                  error_message="ERROR!! Invallid input detected. Try again.").lower()
     if help_choice == "yes":
-        print(" >>>You throw your phone away and the stranger offers you a way out.\n >>>Proceed to level 6")
+        print(" >>>You throw your phone away and the stranger offers you a way out.\n >>>Proceed to level six")
         return True
     else:
         print(" >>>You decline the demand and the stranger robs you all your belongings")
@@ -220,82 +220,83 @@ def treasure_room():
     time.sleep(2)
 
 def main():
-    signUp()
+    register()
     
-    # level 1
+    # level 1 of the game
     path_choice = choose_path()
     if path_choice == "1":
         if dark_forest():
             
-            # level 2
+            # level 2 of the game
             path_choice = choose_path()
             if path_choice == "2":
                 if raging_river():
                     
-                    # level 3
+                    # level 3 of the game
                     path_choice = choose_path()
                     if path_choice == "3":
                         if steep_mountain():
                             
-                            # level 4
+                            # level 4 of the game
                             path_choice = choose_path()
                             if path_choice == "4":
                                 if rugged_road():
                                     
-                                    # level 5
+                                    # level 5 of the game
                                     path_choice = choose_path()
                                     if path_choice == "5":
                                         if help_starnger():
                                             
-                                            # level 6
+                                            # level 6 of the game
                                             path_choice = choose_path()
                                             if path_choice == "6":
                                                 if take_nap():
                                                     
-                                                    # the final level
+                                                    # the final level of the game
                                                     path_choice = choose_path()
                                                     if path_choice == "7":
                                                         if misterious_box():
                                                             treasure_room()
+                                                            # play the game again after completing all the 7 levels of the game
                                                             run_again()
                                                     else:
-                                                        print("You take the box and it exploades interfering with your eyesight making you to quit from there. Game over.\n")
+                                                        print("You take the box and it exploades interfering with your eyesight making you to quit from there. You lost, Game over.\n")
                                                         run_again()
                                                 else:
                                                     print("You take a nap and a lion evades you leaving you with serious wounds. You lost, Game over.\n")
                                                     run_again()
                                             else:
-                                                print("You chose the wrong path and got lost. Game over.\n")
+                                                print("You chose the wrong path and got lost. You lost, Game over.\n")
                                                 run_again()
                                         else:
                                             print("You try to help the stranger and you get robbed. You lost, Game over.\n")
                                             run_again()
                                     else:
-                                        print("You chose the wrong path and got lost. Game over.\n")
+                                        print("You chose the wrong path and got lost. You lost, Game over.\n")
                                         run_again()
                                 else:
                                     print("You try to cross the muddy road and get stuck and a tanker hits you to death. You lost, Game over.\n")
                                     run_again()
                             else:
-                                print("You chose the wrong path and got lost. Game over.\n")
+                                print("You chose the wrong path and got lost. You lost, Game over.\n")
                                 run_again()
                         else:
                             print("You try to climb the steep mountain and you slip rolling down-wards. You lost, Game over.\n")
                             run_again()
                     else:
-                        print("You chose the wrong path and got lost. Game over.\n")
+                        print("You chose the wrong path and got lost. You lost, Game over.\n")
                         run_again()
                 else:
-                    print("You failed to cross the river. Game over.\n")
+                    print("You failed to cross the river. You lost, Game over.\n")
                     run_again()
             else:
-                print("You chose the wrong path and got lost. Game over.\n")
+                print("You chose the wrong path and got lost. You lost, Game over.\n")
                 run_again()
         else:
-            print("You were not able to navigate the dark forest. Game over.\n")
+            print("You were not able to navigate the dark forest. You lost, Game over.\n")
             run_again()
     else:
-        print("You chose the wrong path and got lost. Game over.\n")
+        print("You chose the wrong path and got lost. You lost, Game over.\n")
         run_again()
         
 if __name__ == "__main__":
